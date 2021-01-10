@@ -1,0 +1,61 @@
+/* package application;
+
+import java.util.Date;
+import java.util.List;
+
+import db.DB;
+import db.DbException;
+import model.dao.DaoFactory;
+import model.dao.SellerDAO;
+import model.entities.Department;
+import model.entities.Seller;
+
+public class App {
+	public static void main(String[] args) throws Exception {
+		SellerDAO sellerDAO = DaoFactory.createSellerDAO();
+
+		try {
+			System.out.println("==== TEST 1: seller findById ====");
+			Seller seller = sellerDAO.findById(8);
+
+			System.out.println(seller);
+
+			System.out.println("\n==== TEST 2: seller findByDepartment(2) ====");
+			List<Seller> list = sellerDAO.findByDepartment(2);
+
+			list.forEach(System.out::println);
+
+			System.out.println("\n==== TEST 3: seller findAll ====");
+			list = sellerDAO.findAll();
+
+			list.forEach(System.out::println);
+
+			System.out.println("\n==== TEST 4: seller insert ====");
+			Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, new Department(2, null));
+			// sellerDAO.insert(newSeller);
+
+			System.out.println(newSeller);
+
+			System.out.println("\n==== TEST 5: seller update ====");
+			seller = sellerDAO.findById(1);
+			seller.setName("Martha Wayne");
+			seller.setEmail("martha_w@gmail.com");
+
+			sellerDAO.update(seller);
+
+			System.out.println(seller);
+
+			System.out.println("\n==== TEST 6: seller delete ====");
+			seller = sellerDAO.findById(9);
+
+			//sellerDAO.deleteById(seller.getId());
+
+			System.out.println("Deletado");
+		} catch (DbException e) {
+			e.printStackTrace();
+		} finally {
+			DB.closeConnection();
+		}
+	}
+}
+ */
